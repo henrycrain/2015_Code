@@ -6,6 +6,7 @@ RangeFinder::RangeFinder() :
 	Subsystem("RangeFinder")
 {
 	rangefinder = new AnalogInput(RANGEFINDER_CHANNEL);
+	relay = new Relay(RELAY_PORT);
 }
 
 void RangeFinder::InitDefaultCommand()

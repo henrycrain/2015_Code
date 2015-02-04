@@ -11,12 +11,12 @@ private:
 
 public:
 	OI();
-	Joystick *joystick_1;
-	Joystick *joystick_2;
-	Joystick *joystick_3;
-	Joystick *joystick_4;
-	Joystick *joystick_5;
-	Joystick *joystick_0;
+	Joystick *joystick0;
+	Joystick *joystick1;
+	Joystick *joystick2;
+	Joystick *joystick3;
+	Joystick *joystick4;
+	Joystick *joystick5;
 };
 
 #endif

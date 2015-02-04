@@ -11,6 +11,7 @@ class RangeFinder: public Subsystem
 {
 private:
 	AnalogInput *rangefinder;
+	Relay *relay;
 public:
 	RangeFinder();
 	void InitDefaultCommand();

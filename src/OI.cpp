@@ -7,17 +7,17 @@
 #include "Commands/LightLED.h"
 
 OI::OI() {
-	// Driver Station option A: Sticks 1 & 2 used for Tank Drive
-	joystick_1 = new Joystick(1);
-	joystick_2 = new Joystick(2);
-	// Driver Station option B: Stick 3 is 3-axis joystick
-	joystick_3 = new Joystick(3);
-	// Driver Station option C: Stick 4 is Xbox controller
-	joystick_4 = new Joystick(4);
-	// Joystick 5 is the NES controller
-	joystick_5 = new Joystick(5);
 	// Joystick 0 is the launchpad
-	joystick_0 = new Joystick(0);
+	joystick0 = new Joystick(0);
+	// Driver Station option A: Sticks 1 & 2 used for Tank Drive
+	joystick1 = new Joystick(1);
+	joystick2 = new Joystick(2);
+	// Driver Station option B: Stick 3 is 3-axis joystick
+	joystick3 = new Joystick(3);
+	// Driver Station option C: Stick 4 is Xbox controller
+	joystick4 = new Joystick(4);
+	// Joystick 5 is the NES controller
+	joystick5 = new Joystick(5);
     // Create some buttons
 	/*
 	 *
@@ -78,12 +78,12 @@ OI::OI() {
      * Uncomment the appropriate lines for the buttons you would like to map
      *
      */
-    JoystickButton *j5_2 = new JoystickButton(joystick_5, 2);   // The "A Button" for closing the forks
-    JoystickButton *j5_3 = new JoystickButton(joystick_5, 3);   // The "B Button" for opening the forks
-    JoystickButton *j5_9 = new JoystickButton(joystick_5, 9);   // The "Select Button" for lowering the forks
-    JoystickButton *j5_10 = new JoystickButton(joystick_5, 10); // The "Start Button" for raising the forks
+    JoystickButton *j5_2 = new JoystickButton(joystick5, 2);   // The "A Button" for closing the forks
+    JoystickButton *j5_3 = new JoystickButton(joystick5, 3);   // The "B Button" for opening the forks
+    JoystickButton *j5_9 = new JoystickButton(joystick5, 9);   // The "Select Button" for lowering the forks
+    JoystickButton *j5_10 = new JoystickButton(joystick5, 10); // The "Start Button" for raising the forks
 
-    JoystickButton *j0_1 = new JoystickButton(joystick_0, 1); // button 1 on the launchpad
+    JoystickButton *j0_1 = new JoystickButton(joystick0, 1); // button 1 on the launchpad
     // Connect the buttons to commands
 
     //light led with launchpad
