@@ -29,6 +29,4 @@
 
 #define RANGEFINDER_CHANNEL 0
 
-#define RELAY_PORT 0
-
 #endif

@@ -19,14 +19,14 @@ void ThreeAxisDrive::Execute()
 	float x = 0, y = 0, t = 0; // floats for the axes x, y, twist
 	float fl = 0, fr = 0, rl = 0, rr = 0; // floats for the motor outputs
 
-	if (abs(oi->joystick_3->GetY() > .1)){
-		y = oi->joystick_3->GetY();
+	if (abs(oi->joystick3->GetY() > .1)){
+		y = oi->joystick3->GetY();
 	}
-	if (abs(oi->joystick_3->GetX() > .1)){
-		x = oi->joystick_3->GetX();
+	if (abs(oi->joystick3->GetX() > .1)){
+		x = oi->joystick3->GetX();
 	}
-	if (abs(oi->joystick_3->GetTwist() > .1)){
-		t = oi->joystick_3->GetTwist();
+	if (abs(oi->joystick3->GetTwist() > .1)){
+		t = oi->joystick3->GetTwist();
 	}
 	fl = y - t + x; // Front Left Wheel
 	fr = y + t - x; // Front Right Wheel

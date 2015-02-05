@@ -3,8 +3,6 @@
 #include "Commands/Release.h"
 #include "Commands/Raise.h"
 #include "Commands/Lower.h"
-#include "Commands/PrintRange.h"
-#include "Commands/LightLED.h"
 
 OI::OI() {
 	// Joystick 0 is the launchpad
@@ -18,9 +16,11 @@ OI::OI() {
 	joystick4 = new Joystick(4);
 	// Joystick 5 is the NES controller
 	joystick5 = new Joystick(5);
+
+	relay = new Relay(0);
+
     // Create some buttons
 	/*
-	 *
 	 *
 	 * 	3-Axis Joystick Button Map
 	 *  Uncomment the appropriate lines for the buttons you would like to map
@@ -83,11 +83,11 @@ OI::OI() {
     JoystickButton *j5_9 = new JoystickButton(joystick5, 9);   // The "Select Button" for lowering the forks
     JoystickButton *j5_10 = new JoystickButton(joystick5, 10); // The "Start Button" for raising the forks
 
-    JoystickButton *j0_1 = new JoystickButton(joystick0, 1); // button 1 on the launchpad
+//  JoystickButton *j0_1 = new JoystickButton(joystick0, 1); // button 1 on the launchpad
     // Connect the buttons to commands
 
     //light led with launchpad
-    j0_1->WhileHeld(new LightLED());
+//  j0_1->WhileHeld(new LightLED());
 
     // Grabber
     // j3_8->WhileHeld(new PrintRange());

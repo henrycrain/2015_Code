@@ -7,8 +7,6 @@
 
 
 class OI {
-private:
-
 public:
 	OI();
 	Joystick *joystick0;
@@ -17,6 +15,7 @@ public:
 	Joystick *joystick3;
 	Joystick *joystick4;
 	Joystick *joystick5;
+	Relay *relay;
 };
 
 #endif

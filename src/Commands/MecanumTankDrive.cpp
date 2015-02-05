@@ -12,10 +12,10 @@ void MecanumTankDrive::Initialize()
 
 void MecanumTankDrive::Execute()
 {
-	drivetrain->front_right_motor->Set(oi->joystick_2->GetY() + oi->joystick_2->GetX());
-	drivetrain->rear_right_motor->Set(oi->joystick_2->GetY() - oi->joystick_2->GetX());
-	drivetrain->front_left_motor->Set(oi->joystick_1->GetY() - oi->joystick_1->GetX());
-	drivetrain->rear_left_motor->Set(oi->joystick_1->GetY() + oi->joystick_1->GetX());
+	drivetrain->front_right_motor->Set(oi->joystick2->GetY() + oi->joystick2->GetX());
+	drivetrain->rear_right_motor->Set(oi->joystick2->GetY() - oi->joystick2->GetX());
+	drivetrain->front_left_motor->Set(oi->joystick1->GetY() - oi->joystick1->GetX());
+	drivetrain->rear_left_motor->Set(oi->joystick1->GetY() + oi->joystick1->GetX());
 }
 
 bool MecanumTankDrive::IsFinished()

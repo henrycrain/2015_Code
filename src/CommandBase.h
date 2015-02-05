@@ -23,8 +23,8 @@ public:
 	static DriveTrain *drivetrain;
 	static Gripper *gripper;
 	static LifterPID *lifterpid;
-	static OI *oi;
 	static RangeFinder *rangefinder;
+	static OI *oi;
 };
 
 #endif

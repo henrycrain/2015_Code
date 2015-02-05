@@ -16,10 +16,10 @@ void XBoxDrive::Initialize()
 
 // Called repeatedly when this Command is scheduled to run
 void XBoxDrive::Execute(){
-	drivetrain->front_right_motor->Set(-1 * (oi->joystick_4->GetRawAxis(1) - oi->joystick_4->GetRawAxis(0) - oi->joystick_4->GetRawAxis(4)));
-	drivetrain->front_left_motor->Set(oi->joystick_4->GetRawAxis(1) + oi->joystick_4->GetRawAxis(0) + oi->joystick_4->GetRawAxis(4));
-	drivetrain->rear_left_motor->Set(-1 * (oi->joystick_4->GetRawAxis(1) + oi->joystick_4->GetRawAxis(0) - oi->joystick_4->GetRawAxis(4)));
-	drivetrain->rear_right_motor->Set(oi->joystick_4->GetRawAxis(1) - oi->joystick_4->GetRawAxis(0) + oi->joystick_4->GetRawAxis(4));
+	drivetrain->front_right_motor->Set(-1 * (oi->joystick4->GetRawAxis(1) - oi->joystick4->GetRawAxis(0) - oi->joystick4->GetRawAxis(4)));
+	drivetrain->front_left_motor->Set(oi->joystick4->GetRawAxis(1) + oi->joystick4->GetRawAxis(0) + oi->joystick4->GetRawAxis(4));
+	drivetrain->rear_left_motor->Set(-1 * (oi->joystick4->GetRawAxis(1) + oi->joystick4->GetRawAxis(0) - oi->joystick4->GetRawAxis(4)));
+	drivetrain->rear_right_motor->Set(oi->joystick4->GetRawAxis(1) - oi->joystick4->GetRawAxis(0) + oi->joystick4->GetRawAxis(4));
 }
 
 // Make this return true when this Command no longer needs to run execute()

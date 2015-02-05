@@ -14,10 +14,10 @@ void StandardTankDrive::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void StandardTankDrive::Execute()
 {
-	drivetrain->front_left_motor->Set(oi->joystick_1->GetY());
-	drivetrain->rear_left_motor->Set(oi->joystick_1->GetY());
-	drivetrain->front_right_motor->Set(oi->joystick_2->GetY());
-	drivetrain->rear_right_motor->Set(oi->joystick_2->GetY());
+	drivetrain->front_left_motor->Set(oi->joystick1->GetY());
+	drivetrain->rear_left_motor->Set(oi->joystick1->GetY());
+	drivetrain->front_right_motor->Set(oi->joystick2->GetY());
+	drivetrain->rear_right_motor->Set(oi->joystick2->GetY());
 }
 
 // Make this return true when this Command no longer needs to run execute()
