@@ -1,13 +1,14 @@
 #include "ThreeAxisDrive.h"
-#include "math.h"
-ThreeAxisDrive::ThreeAxisDrive()
+
+ThreeAxisDrive::ThreeAxisDrive(DataLogger *logger)
 {
+	l=logger;
 	Requires(drivetrain);
 }
 
 void ThreeAxisDrive::Initialize()
 {
-
+	l->Log("Entering ThreeAxisDrive::Initialize()", STATUS_MESSAGE);
 }
 
 void ThreeAxisDrive::Execute()
@@ -19,6 +20,7 @@ void ThreeAxisDrive::Execute()
 	float x = 0, y = 0, t = 0; // floats for the axes x, y, twist
 	float fl = 0, fr = 0, rl = 0, rr = 0; // floats for the motor outputs
 
+<<<<<<< HEAD
 	if (abs(oi->joystick3->GetY() > .1)){
 		y = oi->joystick3->GetY();
 	}
@@ -27,11 +29,35 @@ void ThreeAxisDrive::Execute()
 	}
 	if (abs(oi->joystick3->GetTwist() > .1)){
 		t = oi->joystick3->GetTwist();
+=======
+	if (oi->joystick_3->GetY() > .1 || oi->joystick_3->GetY() < -.1) // Deadband +/- .1
+	{
+		y = oi->joystick_3->GetY();
+	}
+	if (oi->joystick_3->GetX() > .1 || oi->joystick_3->GetX() < -.1)  // Deadband +/- .1
+	{
+		x = oi->joystick_3->GetX();
+	}
+	if (oi->joystick_3->GetTwist() > .1 || oi->joystick_3->GetTwist() < -.1)  // Deadband +/- .1
+	{
+		t = oi->joystick_3->GetTwist();
+>>>>>>> e63a1a4709ea0947574fece2418957d4416d3a54
 	}
 	fl = y - t + x; // Front Left Wheel
 	fr = y + t - x; // Front Right Wheel
 	rl = y - t - x; // Rear Left Wheel
 	rr = y + t + x; // Rear Right Wheel
+
+#if (DEBUG_LEVEL == 4) // CRE Not sure if this is legit
+
+	if (fl!=0 || fr!=0 || rl!=0 || rr!=0)
+	{
+		char *data = new char[128];
+		sprintf(data, "We're moving: %2.1f, %2.1f, %2.1f; X=%2.1f, Y=%2.1f, Twist=%2.1f, %2.1f", fl, fr, rl, rr, x, y, t);
+		l->Log(data, VERBOSE_MESSAGE);
+	}
+
+#endif
 
 	drivetrain->Go(fl,fr,rl,rr);
 	/*
@@ -53,6 +79,7 @@ bool ThreeAxisDrive::IsFinished()
 void ThreeAxisDrive::End()
 {
 	drivetrain->Stop();
+	l->Log("ThreeAxisDrive::End()", STATUS_MESSAGE);
 }
 
 // Called when another command which requires one or more of the same
@@ -60,4 +87,5 @@ void ThreeAxisDrive::End()
 void ThreeAxisDrive::Interrupted()
 {
 	drivetrain->Stop();
+	l->Log("ThreeAxisDrive::Interrupted()", STATUS_MESSAGE);
 }

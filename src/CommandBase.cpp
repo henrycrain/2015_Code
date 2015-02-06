@@ -13,6 +13,7 @@ DriveTrain* CommandBase::drivetrain = NULL;
 Gripper* CommandBase::gripper = NULL;
 LifterPID* CommandBase::lifterpid = NULL;
 RangeFinder* CommandBase::rangefinder = NULL;
+SonarFeedback* CommandBase::sonarfeedback = NULL;
 OI* CommandBase::oi = NULL;
 
 void CommandBase::init() {
@@ -24,5 +25,6 @@ void CommandBase::init() {
 	gripper = new Gripper(); // Grab, Release Forks
 	lifterpid = new LifterPID();
 	rangefinder = new RangeFinder(); // find distances!
+	sonarfeedback = new SonarFeedback();
 	oi = new OI();
 }
