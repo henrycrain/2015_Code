@@ -29,6 +29,6 @@
 
 #define RANGEFINDER_CHANNEL 0
 
-#define GREEN_BAR_RELAY_PORT 0
+#define RELAY_PORT_0 0
 
 #endif

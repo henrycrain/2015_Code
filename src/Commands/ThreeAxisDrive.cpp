@@ -15,33 +15,20 @@ void ThreeAxisDrive::Execute()
 {
 
 	// The drivetrain->Go() method has built in handling for reversing motors on the left side...
-	/* */
 
 	float x = 0, y = 0, t = 0; // floats for the axes x, y, twist
 	float fl = 0, fr = 0, rl = 0, rr = 0; // floats for the motor outputs
-
-<<<<<<< HEAD
-	if (abs(oi->joystick3->GetY() > .1)){
+	if (oi->joystick3->GetY() > .1 || oi->joystick3->GetY() < -.1) // Deadband +/- .1
+	{
 		y = oi->joystick3->GetY();
 	}
-	if (abs(oi->joystick3->GetX() > .1)){
+	if (oi->joystick3->GetX() > .1 || oi->joystick3->GetX() < -.1)  // Deadband +/- .1
+	{
 		x = oi->joystick3->GetX();
 	}
-	if (abs(oi->joystick3->GetTwist() > .1)){
+	if (oi->joystick3->GetTwist() > .1 || oi->joystick3->GetTwist() < -.1)  // Deadband +/- .1
+	{
 		t = oi->joystick3->GetTwist();
-=======
-	if (oi->joystick_3->GetY() > .1 || oi->joystick_3->GetY() < -.1) // Deadband +/- .1
-	{
-		y = oi->joystick_3->GetY();
-	}
-	if (oi->joystick_3->GetX() > .1 || oi->joystick_3->GetX() < -.1)  // Deadband +/- .1
-	{
-		x = oi->joystick_3->GetX();
-	}
-	if (oi->joystick_3->GetTwist() > .1 || oi->joystick_3->GetTwist() < -.1)  // Deadband +/- .1
-	{
-		t = oi->joystick_3->GetTwist();
->>>>>>> e63a1a4709ea0947574fece2418957d4416d3a54
 	}
 	fl = y - t + x; // Front Left Wheel
 	fr = y + t - x; // Front Right Wheel

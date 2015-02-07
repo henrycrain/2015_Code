@@ -1,12 +1,13 @@
 #ifndef COMMAND_BASE_H
 #define COMMAND_BASE_H
 
-#include "Commands/Command.h"
+#include <Commands/Command.h>
+#include <Commands/Scheduler.h>
+
 #include "Subsystems/DriveTrain.h"
 #include "Subsystems/Gripper.h"
 #include "Subsystems/LifterPID.h"
 #include "Subsystems/RangeFinder.h"
-#include "Subsystems/SonarFeedback.h"
 #include "OI.h"
 
 
@@ -25,7 +26,6 @@ public:
 	static Gripper *gripper;
 	static LifterPID *lifterpid;
 	static RangeFinder *rangefinder;
-	static SonarFeedback *sonarfeedback;
 	static OI *oi;
 };
 

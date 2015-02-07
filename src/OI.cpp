@@ -17,8 +17,6 @@ OI::OI() {
 	// Joystick 5 is the NES controller
 	joystick5 = new Joystick(5);
 
-	relay = new Relay(0);
-
     // Create some buttons
 	/*
 	 *

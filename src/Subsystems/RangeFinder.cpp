@@ -1,11 +1,10 @@
 #include "RangeFinder.h"
-#include "../RobotMap.h"
-#include "../Commands/PrintRange.h" // YOU MUST INCLUDE printrange to set it as the default command
 
 RangeFinder::RangeFinder() :
 	Subsystem("RangeFinder")
 {
 	rangefinder = new AnalogInput(RANGEFINDER_CHANNEL);
+	relay = new Relay(RELAY_PORT_0, kForward);
 }
 
 void RangeFinder::InitDefaultCommand()
@@ -27,4 +26,14 @@ float RangeFinder::GetRangeIn()
 float RangeFinder::GetRangeFt()
 {
 	return GetVoltage() * FT_FACTOR;
+}
+
+void LightOn()
+{
+	relay->Set(kOn);
+}
+
+void LightOff()
+{
+	relay->Set(kOff);
 }
