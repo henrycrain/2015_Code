@@ -1,7 +1,11 @@
 #ifndef DRIVETRAIN_H
 #define DRIVETRAIN_H
-#include "Commands/Subsystem.h"
-#include "WPILib.h"
+
+#include <Commands/Subsystem.h>
+#include <WPILib.h>
+#include <math.h>
+
+#include "../RobotMap.h"
 
 class DriveTrain: public Subsystem {
 private:

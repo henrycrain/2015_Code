@@ -1,6 +1,4 @@
 #include "DriveTrain.h"
-#include "../RobotMap.h"
-#include "math.h"
 
 DriveTrain::DriveTrain() : Subsystem("DriveTrain") { // remember to update this to the correct type of motor controller
 	front_left_motor = new Victor(front_left_motor_port);

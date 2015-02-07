@@ -20,6 +20,14 @@ void PrintRange::Execute()
 	printf("Range: %f in", rangefinder->GetRangeIn());
 	printf("Range: %f ft", rangefinder->GetRangeFt());
 	SmartDashboard::PutNumber("Feet", rangefinder->GetRangeFt());
+	if(rangefinder->GetRangeFt() <= 1)
+	{
+		rangefinder->LightOn();
+	}
+	else
+	{
+		rangefinder->LightOff();
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()

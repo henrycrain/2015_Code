@@ -6,8 +6,6 @@
 
 class PrintRange: public CommandBase
 {
-private:
-
 public:
 	PrintRange();
 	void Initialize();
