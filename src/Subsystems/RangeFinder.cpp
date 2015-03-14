@@ -9,7 +9,7 @@ RangeFinder::RangeFinder(OI *operatorInterface): Subsystem("RangeFinder")
 
 void RangeFinder::InitDefaultCommand()
 {
-	SetDefaultCommand(new PrintRange());
+    SetDefaultCommand(new PrintRange());
 }
 
 float RangeFinder::GetVoltage()
